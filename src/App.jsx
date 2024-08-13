@@ -3,11 +3,12 @@ import "./App.css";
 import AddTodo from "./components/AddTodo/AddTodo";
 import { useDispatch } from "react-redux";
 import { bindActionCreators } from "redux";
-import { addTodo, deleteTodo, finishedTodo, editTodo } from "./actions/todoActions";
+import todoReducer, { addTodo, deleteTodo, editTodo, finishTodo } from './slices/todoSlices';
+
 function App() {
 
   const dispatch = useDispatch();
-  const actions = bindActionCreators({ addTodo, deleteTodo, finishedTodo, editTodo }, dispatch);
+  const actions = bindActionCreators({ addTodo, deleteTodo, finishTodo, editTodo }, dispatch);
 
   return (
         <>

@@ -3,18 +3,19 @@ import Todo from "../Todo/Todo"
 
 function TodoList({ deleteTodo, finishedTodo, editTodo }) {
 
-  const list = useSelector((state) => state.todo);
+  const list = useSelector((state) => state.todo.todoList);
+  console.log(list);
 
   function onFinished(todo, isFinished) {
-      finishedTodo(todo, isFinished);
+      finishedTodo({todo, isFinished});
   }
 
   function onDelete(todo) {
-      deleteTodo(todo);
+      deleteTodo({todo});
   }
 
   function onEdit(todo, todoText) {
-      editTodo(todo, todoText);
+      editTodo({todo, todoText});
   }
 
   return (
